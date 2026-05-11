@@ -28,7 +28,7 @@
                 </div>
                 <div class="search-box" style="display: flex; gap: 10px; align-items: center; position: relative;">
                     <div style="position: relative; width: 250px;">
-                        <input type="text" id="catalog-search" placeholder="Поиск фильмов..." class="modal-input"
+                        <input type="text" id="catalog-search" name="search" autocomplete="off" placeholder="Поиск фильмов..." class="modal-input"
                             oninput="handleSearchInput()" onfocus="handleSearchInput()"
                             style="margin-bottom: 0; padding: 6px; width: 100%; background: #333; border: 1px solid #555; color: #fff;">
                         
@@ -58,8 +58,8 @@
     <div id="login-modal" class="modal">
         <div class="modal-header">Вход <span class="close-modal" onclick="closeModals()">&times;</span></div>
         <div class="modal-body">
-            <input type="text" id="login-username" placeholder="Логин" class="modal-input">
-            <input type="password" id="login-password" placeholder="Пароль" class="modal-input">
+            <input type="text" id="login-username" name="username" autocomplete="username" placeholder="Логин" class="modal-input">
+            <input type="password" id="login-password" name="password" autocomplete="current-password" placeholder="Пароль" class="modal-input">
             <button onclick="login()" class="modal-btn">Войти</button>
         </div>
     </div>
@@ -67,8 +67,8 @@
     <div id="register-modal" class="modal">
         <div class="modal-header">Регистрация <span class="close-modal" onclick="closeModals()">&times;</span></div>
         <div class="modal-body">
-            <input type="text" id="reg-username" placeholder="Логин" class="modal-input">
-            <input type="password" id="reg-password" placeholder="Пароль" class="modal-input">
+            <input type="text" id="reg-username" name="username" autocomplete="username" placeholder="Логин" class="modal-input">
+            <input type="password" id="reg-password" name="password" autocomplete="new-password" placeholder="Пароль" class="modal-input">
             <div class="captcha-box">
                 <img id="captcha-img" src="" alt="Captcha" style="display: none;">
                 <div id="captcha-text" style="display: none; color: #fff; margin-bottom: 10px;"></div>
