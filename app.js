@@ -1092,6 +1092,7 @@ function renderPlayer(playerData) {
             iframe.style.border = 'none';
             iframe.setAttribute('allowfullscreen', 'true');
             iframe.setAttribute('referrerpolicy', 'no-referrer'); 
+            iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
             videoContainer.appendChild(iframe);
             
         } else {
@@ -1152,6 +1153,7 @@ function renderPlayer(playerData) {
                         iframe.style.border = 'none';
                         iframe.setAttribute('allowfullscreen', 'true');
                         iframe.setAttribute('referrerpolicy', 'no-referrer');
+                        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
                         videoContainer.appendChild(iframe);
                     } else {
                         videoContainer.innerHTML = '<div style="display:flex; flex-direction:column; height:100%; justify-content:center; align-items:center;"><div class="play-btn">▶</div><div class="player-text">Видео недоступно</div></div>';
