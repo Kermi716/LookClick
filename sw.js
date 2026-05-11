@@ -139,6 +139,7 @@ const AD_DOMAINS = [
     'yieldoptimizer.com',
     'zedo.com',
     'zeotap.com',
+    'distribrey.com'
 ];
 
 self.addEventListener('fetch', event => {
