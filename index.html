@@ -28,8 +28,8 @@
                 </div>
                 <div class="search-box" style="display: flex; gap: 10px; align-items: center; position: relative;">
                     <div style="position: relative; width: 250px;">
-                        <input type="text" id="catalog-search" name="search" autocomplete="off" placeholder="Поиск фильмов..." class="modal-input"
-                            oninput="handleSearchInput()" onfocus="handleSearchInput()"
+                        <input type="text" id="catalog-search" name="search" autocomplete="off" readonly placeholder="Поиск фильмов..." class="modal-input"
+                            oninput="handleSearchInput()" onfocus="this.removeAttribute('readonly'); handleSearchInput()"
                             style="margin-bottom: 0; padding: 6px; width: 100%; background: #333; border: 1px solid #555; color: #fff;">
                         
                         <div id="search-suggestions" class="search-suggestions" style="display: none;"></div>
