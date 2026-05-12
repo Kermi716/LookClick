@@ -888,3 +888,16 @@ seasons-box, .episodes-box {
     border: none;
     display: block;
 }
+
+.mobile-ad {
+    display: none; 
+    text-align: center;
+    margin: 15px auto;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .mobile-ad {
+        display: block;
+    }
+}
