@@ -53,12 +53,16 @@ a:hover {
     background-color: #111111;
     border-bottom: 2px solid #cc0000;
     padding: 15px 0;
+    position: relative;
+    z-index: 999;
 }
 
 .top-bar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    z-index: 1000;
 }
 
 .logo {
@@ -70,6 +74,8 @@ a:hover {
 
 .search-box {
     display: flex;
+    position: relative;
+    z-index: 10000;
 }
 
 .search-box input {
@@ -103,7 +109,7 @@ a:hover {
     background: #2b2b2b;
     border: 1px solid #444;
     border-top: none;
-    z-index: 1000;
+    z-index: 9999;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     max-height: 300px;
     overflow-y: auto;
