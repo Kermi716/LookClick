@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     checkAuth();
     handleHash();
     setupRatingStars();
+    checkMobileAd();
     
     document.getElementById('modal-overlay').addEventListener('click', closeModals);
 
@@ -1092,7 +1093,6 @@ function renderPlayer(playerData) {
             iframe.style.border = 'none';
             iframe.setAttribute('allowfullscreen', 'true');
             iframe.setAttribute('referrerpolicy', 'no-referrer'); 
-            iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
             videoContainer.appendChild(iframe);
             
         } else {
@@ -1153,7 +1153,6 @@ function renderPlayer(playerData) {
                         iframe.style.border = 'none';
                         iframe.setAttribute('allowfullscreen', 'true');
                         iframe.setAttribute('referrerpolicy', 'no-referrer');
-                        iframe.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-presentation');
                         videoContainer.appendChild(iframe);
                     } else {
                         videoContainer.innerHTML = '<div style="display:flex; flex-direction:column; height:100%; justify-content:center; align-items:center;"><div class="play-btn">▶</div><div class="player-text">Видео недоступно</div></div>';
@@ -1517,4 +1516,26 @@ function shareFilmLink() {
         console.error('Ошибка копирования: ', err);
         alert('Не удалось скопировать ссылку.');
     });
+}
+
+let mobileAdTimer = null;
+
+function checkMobileAd() {
+    const adContainer = document.getElementById('mobile-ad-container');
+    if (adContainer) {
+        adContainer.classList.add('show-ad');
+    }
+}
+
+function hideMobileAd() {
+    const adContainer = document.getElementById('mobile-ad-container');
+    if (adContainer) {
+        adContainer.classList.remove('show-ad');
+        
+        if (mobileAdTimer) clearTimeout(mobileAdTimer);
+        
+        mobileAdTimer = setTimeout(() => {
+            checkMobileAd();
+        }, 5 * 60 * 1000);
+    }
 }

@@ -827,7 +827,7 @@ seasons-box, .episodes-box {
     }
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1350px) {
     .side-ad {
         display: none !important;
     }
@@ -893,17 +893,66 @@ seasons-box, .episodes-box {
     height: 600px !important;
     border: none;
     display: block;
+    
 }
 
 .mobile-ad {
-    display: none; 
-    text-align: center;
-    margin: 15px auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
     width: 100%;
+    background: rgba(17, 17, 17, 0.95);
+    border-top: 1px solid #cc0000;
+    z-index: 9998;
+    text-align: center;
+    padding: 10px 0 5px 0;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.7);
+    
+    transform: translateY(100%);
+    visibility: hidden;
+    transition: transform 0.4s ease-in-out, visibility 0.4s ease-in-out;
 }
 
-@media (max-width: 768px) {
+.mobile-ad.show-ad {
+    transform: translateY(0);
+    visibility: visible;
+}
+
+@media (min-width: 1351px) {
     .mobile-ad {
-        display: block;
+        display: none !important;
     }
+}
+
+.mobile-ad-content {
+    position: relative;
+    display: inline-block;
+    width: 320px;
+    height: 50px;
+}
+
+.close-ad {
+    position: absolute;
+    top: -20px;
+    right: -15px;
+    width: 26px;
+    height: 26px;
+    background: #cc0000;
+    color: #fff;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    font-size: 18px; 
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.close-ad:hover {
+    background: #ff3333;
+    transform: scale(1.1);
 }
