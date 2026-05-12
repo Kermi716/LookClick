@@ -44,6 +44,8 @@ a:hover {
     width: 100%;
     margin: 0 auto;
     padding: 0 15px;
+    position: relative;
+    z-index: 60;
 }
 
 
@@ -136,9 +138,29 @@ a:hover {
 
 .side-ad {
     position: fixed; 
-    top: 80px;
-    width: 240px; 
-    z-index: 50;     
+    top: 50%;
+    transform: translateY(-50%); 
+    width: 160px;
+    min-height: 300px;
+    z-index: 50; 
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-ad {
+    left: 10px; 
+}
+
+.right-ad {
+    right: 10px; 
+}
+
+.side-ad iframe, .side-ad img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .side-ad img {
@@ -146,14 +168,6 @@ a:hover {
     height: auto;
     border-radius: 8px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
-}
-
-.left-ad {
-    left: 20px; 
-}
-
-.right-ad {
-    right: 20px; 
 }
 
 .block {
@@ -866,4 +880,11 @@ seasons-box, .episodes-box {
 .film-badge-rating span {
     color: #f1c40f; 
     font-size: 14px;
+}
+
+.side-ad iframe {
+    width: 160px !important;
+    height: 600px !important;
+    border: none;
+    display: block;
 }
